@@ -1,0 +1,8 @@
+.split-times {
+    list-style: none;
+}
+
+.split-times__item {
+    padding: 10px;
+    font-size: 2em;
+}

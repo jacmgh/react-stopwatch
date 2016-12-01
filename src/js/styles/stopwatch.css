@@ -1,0 +1,7 @@
+.stopwatch {
+    font-size: 4rem;
+}
+
+.stopwatch__decimal {
+    color: #ccc;
+}
