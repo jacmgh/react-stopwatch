@@ -18,7 +18,7 @@ const formatTime = n => {
     return (
         <span>
             {minutes}:{seconds < 10 ? '0' + seconds : seconds}
-            <span className="stopwatch__tenths">.{milliseconds}</span>
+            <span className="stopwatch__decimal">.{milliseconds}</span>
         </span>
     );
 };
