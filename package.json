@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --progress --content-base dist/ --inline --port 3000 --devtool source-map",
-    "build": "NODE_ENV=production webpack --progress -p"
+    "build": "NODE_ENV=production webpack --progress -p",
+    "gh-pages": "git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
