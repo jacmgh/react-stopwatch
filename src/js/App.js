@@ -66,8 +66,7 @@ class App extends React.Component {
 
     handleSplit() {
         if (this.state.isRunning) {
-            let splitTimes = this.state.splitTimes;
-            splitTimes.unshift(new Date().getTime() - this.state.startTime);
+            let splitTimes = [new Date().getTime() - this.state.startTime].concat(this.state.splitTimes);
             this.setState({splitTimes});
         }
     }
