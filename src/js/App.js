@@ -14,7 +14,7 @@ import './styles/stopwatch.css';
 const formatTime = n => {
     let minutes = Math.floor(n / 600);
     let seconds = Math.floor((n - minutes * 600) / 10);
-    let milliseconds = Math.round(n - seconds * 10);
+    let milliseconds = Math.round(n - seconds * 10 - minutes * 600);
     return (
         <span>
             {minutes}:{seconds < 10 ? '0' + seconds : seconds}

@@ -8,7 +8,7 @@ import '../styles/card.css';
 const formatTime = n => {
     let minutes = Math.floor(n / 60000);
     let seconds = Math.floor((n - minutes * 60000) / 1000);
-    let milliseconds = Math.round(n - seconds * 1000);
+    let milliseconds = Math.round(n - seconds * 1000 - minutes * 60000);
     milliseconds = milliseconds < 10 ? `00${milliseconds}` : milliseconds < 100 ? `0${milliseconds}` : milliseconds;
     return (
         <span>
