@@ -10,7 +10,7 @@ import './styles/btn.css';
 import './styles/card.css';
 import './styles/stopwatch.css';
 
-// Helper function: convert milliseconds to human readable format
+// Helper function: convert timestamp (tenths of a second) to human readable format
 const formatTime = n => {
     let minutes = Math.floor(n / 600);
     let seconds = Math.floor((n - minutes * 600) / 10);
@@ -36,6 +36,11 @@ class App extends React.Component {
             startTime: 0,
             splitTimes: []
         };
+
+        // Bind methods
+        this.handleStart = this.handleStart.bind(this);
+        this.handleSplit = this.handleSplit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     // Start/Pause handler
@@ -85,9 +90,9 @@ class App extends React.Component {
                     <div className="stopwatch__time">{formatTime(Math.round(this.state.time / 100))}</div>
 
                     {/* Buttons */}
-                    <button type="button" className={'btn' + (this.state.isRunning ? ' btn--warning' : ' btn--success')} onClick={this.handleStart.bind(this)}>{this.state.isRunning ? 'Pause' : 'Start'}</button>
-                    <button type="button" className="btn btn--success" onClick={this.handleSplit.bind(this)} disabled={!this.state.isRunning}>Split</button>
-                    <button type="button" className="btn btn--danger" onClick={this.handleReset.bind(this)}>Reset</button>
+                    <button type="button" className={'btn' + (this.state.isRunning ? ' btn--warning' : ' btn--success')} onClick={this.handleStart}>{this.state.isRunning ? 'Pause' : 'Start'}</button>
+                    <button type="button" className="btn btn--success" onClick={this.handleSplit} disabled={!this.state.isRunning}>Split</button>
+                    <button type="button" className="btn btn--danger" onClick={this.handleReset}>Reset</button>
                 </div>
 
                 {/* Split times */}
